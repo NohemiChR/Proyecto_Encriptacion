@@ -1,0 +1,297 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+  
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    background : url(/Proyecto_Encriptacion/Version_2/assets/fondo_claro.jpg)
+    no-repeat center center fixed;
+background-size: cover;
+ }
+  .header {
+    background-color: #8E44AD ;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .header h1 {
+    margin: 0;
+    font-size: 2rem; /* Tamaño de fuente ajustable */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Para centrar verticalmente en el encabezado */
+  }
+  main {
+    padding: 20px;
+  }
+ 
+  #Principal {
+
+    background-color: #F2A1F9; /* Color de fondo */
+    width: 80%; /* Ancho del recuadro */
+    max-width: 800px; /* Ancho máximo */
+    padding: 20px; /* Espacio interno del recuadro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra del recuadro */
+    margin: 20px auto; /* Centrarse horizontalmente y agregar espacio superior e inferior */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* height: 500px;  */
+    /* Altura fija */
+    min-height: 500px;
+     /* Altura mínima */
+
+
+  
+  }
+
+
+
+
+
+/* ////////////// */
+#message {
+  width: 100%; /* Ancho completo del contenedor padre */
+  display: flex;
+  flex-direction: column; /* Colocar elementos en columna */
+  gap: 10px; /* Espacio entre elementos */
+  align-items: center; /* Centrar elementos horizontalmente */
+}
+
+#message label, #message textarea, #message input, #message .btnGroup {
+  width: 100%; /* Asegurar que ocupen el ancho completo del contenedor padre */
+}
+
+#message label {
+  /* font-family: 'Roboto', sans-serif; */
+
+  font-size: 1.2rem; /* Tamaño de fuente aumentado */
+  font-weight: bold; /* Negrita */
+  text-align: center; /* Alinear texto al centro */
+  color: #de0da3; /* Color del texto */
+  margin-bottom: 5px; /* Espacio inferior */
+}
+
+
+#message #counter {
+  align-self: flex-end; /* Alinear a la derecha */
+  font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  
+}
+
+#message textarea {
+  resize: none; /* Desactivar el redimensionado manual del textarea */
+  padding: 10px; /* Espacio interno del textarea */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde del textarea */
+  font-size: 1rem; /* Tamaño de fuente */
+  height: 150px; /* Altura fija, le cambie*/
+}
+
+#message input {
+  padding: 10px; /* Espacio interno del input */
+  border-radius: 5px; /* Bordes redondeados */
+  border: 1px solid #ccc; /* Borde del input */
+  font-size: 1rem; /* Tamaño de fuente */
+}
+
+#message .btnGroup {
+ 
+  display: flex;
+  flex-direction: column; /* Cambiar dirección a columna */
+  align-items: center; /* Centrar horizontalmente */
+  gap: 10px; /* Espacio entre elementos */
+  margin-top: 20px; /* Margen superior para separación del resto del contenido */
+ 
+}
+
+
+
+#message .btnGroup button {
+ 
+   width: 100%; /* Ancho completo */
+   padding: 10px; /* Espacio interno */
+   border-radius: 5px; /* Bordes redondeados */
+   border: none; /* Sin borde */
+   color: white; /* Color del texto */
+   font-size: 1rem; /* Tamaño de fuente */
+   cursor: pointer; /* Cursor de puntero */
+}
+
+
+
+#message .btnGroup button#cipher {
+  background-color: #4CAF50; /* Color de fondo del botón de cifrar */
+  margin-bottom: 10px; /* Espacio entre botones */
+}
+
+#message .btnGroup button#decipher {
+  background-color: #f44336; /* Color de fondo del botón de descifrar */
+  /* margin-bottom: 10px;  */
+  /* Espacio entre botones */
+}
+
+
+
+
+
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Esto hara que ocupe el 100% de la pagina */
+    background-color: #111111bd;
+
+    display: flex;
+    /* al padre le doy flex */
+    opacity: 0;
+    /* oculta modal */
+    pointer-events: none;
+    /* desactiva cualquier elemento del mause */
+
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+
+}
+/* solo se muestra el modal cuando tenga el moda show */
+
+.modal--show{
+    /* clase modal--show, clase modificadora, bem una manera de nmobrar a las clses */
+  opacity: 1;
+  pointer-events: unset; 
+}
+
+.modal__container{
+    
+    position: relative;
+    /*Añadimos position: 
+    relative para posicionar elementos hijos relativamente a este contenedor*/
+  /* ------------------------ */
+    margin: auto;
+  /* lo centro h y v al hijo */
+    width: 90%;
+    /* su ancho sera del 90% siempre y cuando sea menos a max-with=600px */
+    max-width: 700px;
+    /* eso hace el contenido mucho mas pequeno */
+    max-height: 90%;
+    /* para limitar al contenido */
+    border-radius: 6px;
+    padding: 3em 2.5em; 
+    /* arriba y abajo y derecha e izq */
+    display: grid;
+    /* para dar un espaciador a cada elemento 1 em */
+    gap: 1em;
+    place-items: center;
+    /* para centrar a los elementos */
+    grid-auto-columns: 100%;
+   /* quiero que las columnas midan el 100% */
+
+    background-color: #F2A1F9;
+
+    
+}
+
+
+
+
+.modal__title {
+
+ font-size: 1.2rem; /* Tamaño de fuente aumentado */
+  font-weight: bold; /* Negrita */
+ 
+  color: #de0da3; /* Color del texto */
+ 
+}
+.modal__text {
+ margin-bottom: 10px;
+ /* da un espacio en blanco entre el textarea y el button copy */
+ 
+
+ border-radius: 5px; /* Bordes redondeados */
+ border: 1px solid #ccc; /* Borde del textarea */
+ 
+ height: 150px; /* Altura fija, le cambie*/
+ width: 100%;
+ padding: 10px;
+
+}
+.modal__close{
+    /* ----------------------- */
+   position: absolute; /*posicionamiento absoluto dentro del moda*/
+   top: 10px;/*distancia desde arriba*/
+   right: 10px;/*distancia desde abajo*/
+   cursor: pointer; /*Cambia el cursor al pasar sobre el elemento */
+
+
+
+ /* --------------------------------------- */
+    /* text-decoration: none; */
+    /* elimina decoraciones de tecto */
+    color: #fff;
+    background-color: #f26250;
+    padding: 0.5em 0.6em;
+    /* arriba y abjo  */
+    border: 1px solid ;
+    /* borde de un 1 pz y color del borde */
+    border-radius: 6px;
+    display: inline-block;
+    /* font-weight: 300; */
+    transition: backgroup-color .3s;
+    /* que pase cuando pase el mouse en close */
+   
+}
+
+.modal__button{
+  background-color: #f44336;
+  width: 100%; /* Ancho completo */
+  padding: 10px; /* Espacio interno */
+  border-radius: 5px; /* Bordes redondeados */
+  border: none; /* Sin borde */
+  color: white; /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente */
+  cursor: pointer; /* Cursor de puntero */
+}
+
+
+footer {
+  background-color: #8E44AD;
+  color: white;
+  text-align: center;
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  footer p {
+      font-size: 0.9rem;
+  }
+}
+
+
+/* BEM escribir clases o nombrar clases con en el html para usarlo concss */
+
+.modal__close:hover{
+  color:#f26250 ;
+  background-color: #fff;  
+}

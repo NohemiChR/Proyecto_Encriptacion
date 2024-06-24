@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+ES:wght@100..400&family=Playwrite+US+Trad:wght@100..400&display=swap');
+
+body {
+    font-family: 'Arial', sans-serif; 
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+    position: relative; 
+    overflow: hidden; 
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+}
+
+.container {
+    background-color: #ffffffd1;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.768);
+    width: 90%;
+    max-width: 500px;
+    z-index: 1;
+}
+
+h1, h2, h3 {
+    font-family: 'Playwrite US Trad', cursive;
+    font-optical-sizing: auto;
+    font-size: 35px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000000;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+label {
+    font-family: 'Playwrite US Trad', cursive;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #010101;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input::placeholder {
+    font-family: 'Playwrite US Trad', cursive;
+    font-optical-sizing: auto;
+    color: #6e6e6e7d;
+}
+
+button {
+    font-family: 'Playwrite US Trad', cursive;
+    font-optical-sizing: auto;
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #000000d0;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center; 
+    gap: 10px; 
+    margin: 20px 0; 
+}
+
+.button-group button:hover {
+    background-color: #05003bd0;
+}
+
+.result {
+    margin-top: 20px;
+}
+
+.result label {
+    font-weight: bold;
+}
+
+.result span {
+    display: block;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-top: 5px;
+    word-wrap: break-word; 
+}
+
+.input-with-icon {
+    position: relative;
+    display: grid;
+    align-items: center;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding-right: 30px; 
+}
+
+.input-with-icon i {
+    position: absolute;
+    right: 10px; 
+    cursor: pointer;
+    color: #9a9898; 
+}
+
+.input-with-icon i:hover {
+    color: #05003bd0; 
+}
+
+strong {
+    font-weight: bold;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    margin-bottom: 10px;
+    font-size: 25px;
+    color: #05003bd0;
+}
+
+.modal-content input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    font-size: 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #05003bd0;
+    color: white;
+    transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+    background-color: #000000d0;
+}
+
+@media (max-width: 768px) {
+    h1, h2, h3 {
+        font-size: 28px;
+    }
+    
+    .container {
+        padding: 15px 20px;
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2, h3 {
+        font-size: 24px;
+    }
+    
+    .container {
+        padding: 10px 15px;
+        width: 100%;
+    }
+    
+    button {
+        padding: 8px 16px;
+        font-size: 10px;
+    }
+    
+    .input-with-icon input {
+        padding-right: 25px;
+        display: grid;
+    }
+}
