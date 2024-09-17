@@ -11,9 +11,9 @@ body {
     padding: 0;
     box-sizing: border-box;
 
-    background : url(Proyecto_Encriptacionn/Version_2/assets/fondo_claro.jpg)
+    background : url('/assets/img/fondo_claro.jpg')
     no-repeat center center fixed;
-background-size: cover;
+    background-size: cover;
  }
   .header {
     background-color: #8E44AD ;
